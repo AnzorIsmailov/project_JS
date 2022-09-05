@@ -23,7 +23,7 @@
 
 'use strict';
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+/* const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -44,3 +44,41 @@ personalMovieDB.movies[c] = d;
 
 console.log(personalMovieDB);
 
+
+if (4 > 0) {
+    console.log('OK!');
+} else {
+    console.log('NO((');
+} */
+
+const num = +prompt('Угадай число от 1 до 10');
+
+const numOdd = [1 || 3 || 5 || 7 || 9];
+
+const numEven = [2 || 4 || 6 || 8 || 10];
+
+if (num == numOdd) {
+    console.log('Верно!');
+} else if (num == numEven) {
+    console.log('Неверно');
+} else {
+    console.log(' Error');
+};
+
+const num2 = +prompt('Угадай число от 1 до 10');
+
+(num2 == numOdd) ? console.log('Верно!') : console.log('Неверно');
+
+const num3 = +prompt('Угадай число от 1 до 10');
+
+switch (num3) {
+    case 1:
+        console.log('Верно!');
+        break;
+    case 3:
+        console.log('Неверно');
+        break;
+    default:
+        console.log('Error');
+        break;
+};
