@@ -82,7 +82,7 @@ switch (num3) {
         console.log('Error');
         break;
 } */
-
+/* 
 console.log(NaN || 2 || undefined);
 
 console.log(NaN && 2 && undefined);
@@ -105,7 +105,7 @@ const cola = 0;
 const nuggets = 2;
 
 if (hamburger === 3 && cola || fries === 3 && nuggets) {
-    console.log('Done!')
+    console.log('Done!');
 }
 
 let hamburger;
@@ -114,7 +114,7 @@ const cola = 0;
 const nuggets = 2;
 
 if (hamburger || cola || fries === 3 || nuggets) {
-    console.log('Done!')
+    console.log('Done!');
 }
 
 let hamburger;
@@ -123,9 +123,48 @@ const cola = 0;
 const nuggets = 2;
 
 if (hamburger && cola || fries === 3 && nuggets) {
-    console.log('Done!')
+    console.log('Done!');
 } else {
-    console.log('No')
+    console.log('No');
+} */
+
+let num = 100;
+
+while (num <= 105) {
+    console.log(num);
+    num++;
 }
 
+let num = 100;
 
+do {
+    console.log(num);
+    num++;
+}
+while (num <= 105);
+
+let num = 100;
+
+do {
+    console.log(num);
+    num--;
+}
+while (num >= 95);
+
+for (let i = 1; i <= 8; i++) {
+    console.log(i);
+}
+
+for (let i = 1; i <= 10; i++) {
+    if (i == 6) {
+        break;
+    }
+    console.log(i);
+}
+
+for (let i = 1; i <= 10; i++) {
+    if (i == 6) {
+        continue;
+    }
+    console.log(i);
+}
