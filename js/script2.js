@@ -77,11 +77,11 @@ switch (num3) {
         break;
     case 3:
         console.log('Неверно');
-        break;
-    default:
-        console.log('Error');
-        break;
-} */
+        default:
+            console.log('Error');
+            break;
+            break;
+        } */
 /* 
 console.log(NaN || 2 || undefined);
 
@@ -105,7 +105,7 @@ const cola = 0;
 const nuggets = 2;
 
 if (hamburger === 3 && cola || fries === 3 && nuggets) {
-    console.log('Done!');
+console.log('Done!');
 }
 
 let hamburger;
@@ -114,7 +114,7 @@ const cola = 0;
 const nuggets = 2;
 
 if (hamburger || cola || fries === 3 || nuggets) {
-    console.log('Done!');
+console.log('Done!');
 }
 
 let hamburger;
@@ -123,12 +123,12 @@ const cola = 0;
 const nuggets = 2;
 
 if (hamburger && cola || fries === 3 && nuggets) {
-    console.log('Done!');
+console.log('Done!');
 } else {
-    console.log('No');
+console.log('No');
 } */
 
-let num = 100;
+let num = 100
 
 while (num <= 105) {
     console.log(num);
@@ -248,7 +248,7 @@ function fifthTask() {
 
     // Пишем решение вот тут
     for (let i = 5; i <= 10; i++) {
-        arrayOfNumbers[i - 5] = i
+        arrayOfNumbers[i - 5] = i;
     }
     console.log(arrayOfNumbers);
     // Не трогаем
@@ -347,3 +347,75 @@ for (let i = 0; i <= lines; i++) {
 }
 
 console.log(result);
+
+function boolToWord(bool) {
+    if (bool == true) {
+        return "yes";
+    } else if (bool == false) {
+        return "no";
+    }
+}
+console.log(boolToWord(false));
+
+function updateLight(current) {
+    if (current == 'green') {
+        return 'yellow';
+    } else if (current == 'yellow') {
+        return 'red';
+    } else {
+        return 'green';
+    }
+}
+
+console.log(updateLight('yellow'));
+
+function feast(beast, dish) {
+    return beast[0] === dish[0] && beast.slice(-1) === dish.slice(-1);
+}
+
+console.log(feast("great blue heron", "garlic naan"));
+
+let summation = function (num) {
+    const arr = [];
+    for (let i = 0; i <= num; i++) {
+        arr.push(i);
+    }
+    return arr.reduce((sum, current) => sum + current, 0);
+}
+
+console.log(summation(7));
+
+const client = {
+    name: 'Anzor',
+    height: 180,
+    weight: 90,
+    colors: {
+        color: 'red',
+        bg: 'black'
+    }
+}
+
+const { bg, color } = client.colors;
+// Деструктуризация объекта, левая часть ключи которые мы хотим достать
+// правая часть это объект из которого мы достаем ключи.
+console.log(bg);
+
+let counter = 0;
+
+// цикл for in  позволяте перебрать Объект и дальше прописывать условия.
+for (let key in client) {
+    if (typeof (client[key]) === 'object') {
+        for (let i in client[key]) { // key это ключ обьекта
+            console.log(`Свойство ${key} имеет значение ${client[key][i]}`);
+            counter++;
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${client[key]}`);
+        counter++;
+    }
+}
+
+console.log(counter);
+//Object.keys - это метод который переводит ключи обьекта в массив из ключей.
+// А длинну массива можно опредилить с помощью length, в итоге получаем длинну обьекта
+console.log(Object.keys(client).length);
