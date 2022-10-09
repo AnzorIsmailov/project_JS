@@ -228,6 +228,8 @@ function initials(name1, name2, name3) {
 
 console.log(initials('Анзор', 'Исмаилов', 'Айдрусович'));
 
+
+
 const personalPlanPeter = {
   name: "Peter",
   age: "29",
@@ -238,28 +240,83 @@ const personalPlanPeter = {
       php: '10%'
     },
     exp: '1 month'
+  },
+  showAgeAndLangs: function (plan) {
+    const { age } = plan;
+    const { languages } = plan.skills;
+    let str = `Мне ${age} и я владею языками: `;
+
+    languages.forEach(function (lang) {
+      str += `${lang.toUpperCase()} `;
+    });
+
+    return str;
+
   }
 };
 
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
 function showExperience(plan) {
-  const { exp } = plan.skills;// plan это аргумент, а skills это ключ из оъекта
+
+  const { exp } = plan.skills;
   return exp;
+
 }
 console.log(showExperience(personalPlanPeter));
 
 function showProgrammingLangs(plan) {
-
-  let str = '';
+  let str = "";
   const { programmingLangs } = plan.skills;
   for (let key in programmingLangs) {
     str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
   }
+
   return str;
+
 }
 
 console.log(showProgrammingLangs(personalPlanPeter));
 
 
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+  if (arr.length === 0) {
+    return `Семья пуста`;
+  }
+  return `Семья состоит из: ${arr.join(' ')}`;
+}
+
+console.log(showFamily(family));
+
+const showFamily2 = arr => arr.length ? `Семья состоит из: ${arr.join(' ')}` : `Семья пуста`;
+
+console.log(showFamily2(family));
 
 
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
 
+function standardizeStrings(arr) {
+  arr.forEach(function (item) {
+    console.log(item.toLowerCase());
+  });
+}
+
+standardizeStrings(favoriteCities);
+
+
+const someString = 'This is some strange string';
+
+function reverse(str) {
+  if (typeof (str) != 'string') {
+    return 'Ошибка!';
+  }
+  return str.split('').reverse().join('');
+}
+
+console.log(reverse(someString));
+
+let reverse2 = str => typeof (str) != 'string' ? 'Ошибка!' : str.split('').reverse().join('');
+
+console.log(reverse2(someString));

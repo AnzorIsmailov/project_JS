@@ -419,3 +419,48 @@ console.log(counter);
 //Object.keys - это метод который переводит ключи обьекта в массив из ключей.
 // А длинну массива можно опредилить с помощью length, в итоге получаем длинну обьекта
 console.log(Object.keys(client).length);
+
+
+//Перебор Массива
+
+const arr = [1, 3, 4, 5, 67];
+
+for (let i = 0; i < arr.length; i++) { //length это моследний индекс массива плюс один [0, 2 , 3, 10] = 4
+    console.log(arr[i]); //Перебераес массив с помощью цикла For
+}
+
+const arr1 = [1, 3, 4, 5, 67];
+
+for (let value in arr1) {
+    console.log(`ключ ${value} имеет значение ${arr1[value]}`);
+} //Перебор массива с помощью цикла For in
+
+const arr2 = [1, 3, 4, 5, 67];
+
+for (let value of arr2) {
+    console.log(`значение ${value}`);
+} //Перебор массива с помощью цикла For of
+
+
+//Метод массива forEach
+const arr3 = [1, 3, 4, 5, 67];
+
+arr3.forEach(function (item, i, arr3) {
+    console.log(`${i}: ${item} внутри массива ${arr3}`);
+});
+
+
+//Методы превращения
+
+let str = 'qwerf, sdffdg, ddfegeg, gfgfgrgdf';
+const products = str.split(', ');//Из строки сформировали массив
+products.sort();//Метод сортирует стороки по алфавиту
+console.log(products.join('; '));//Обратно в сторку
+
+const arr4 = [1, 32, 43, 5, 67];
+arr4.sort(function compareNum(a, b) {
+    return a - b;//Сортирует цифры
+});
+console.log(arr4);
+
+
