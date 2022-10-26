@@ -320,3 +320,25 @@ console.log(reverse(someString));
 let reverse2 = str => typeof (str) != 'string' ? 'Ошибка!' : str.split('').reverse().join('');
 
 console.log(reverse2(someString));
+
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+let totalCurrencies = baseCurrencies.concat(additionalCurrencies);
+
+function availableCurr(arr, missingCurr) {
+  let str = '';
+  arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+  arr.forEach(function (curr) {
+    if (curr !== missingCurr) {
+      str += `${curr}\n`;
+    }
+  });
+
+  return str;
+
+}
+
+console.log(availableCurr(totalCurrencies, 'RUB'));

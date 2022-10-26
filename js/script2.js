@@ -396,13 +396,13 @@ const client = {
 }
 
 const { bg, color } = client.colors;
-// Деструктуризация объекта, левая часть ключи которые мы хотим достать
-// правая часть это объект из которого мы достаем ключи.
+//? Деструктуризация объекта, левая часть ключи которые мы хотим достать
+//? правая часть это объект из которого мы достаем ключи.
 console.log(bg);
 
 let counter = 0;
 
-// цикл for in  позволяте перебрать Объект и дальше прописывать условия.
+//! цикл for in  позволяте перебрать Объект и дальше прописывать условия.
 for (let key in client) {
     if (typeof (client[key]) === 'object') {
         for (let i in client[key]) { // key это ключ обьекта
@@ -416,33 +416,33 @@ for (let key in client) {
 }
 
 console.log(counter);
-//Object.keys - это метод который переводит ключи обьекта в массив из ключей.
-// А длинну массива можно опредилить с помощью length, в итоге получаем длинну обьекта
+//?Object.keys - это метод который переводит ключи обьекта в массив из ключей.
+//? А длинну массива можно опредилить с помощью length, в итоге получаем длинну обьекта
 console.log(Object.keys(client).length);
 
 
-//Перебор Массива
+//!Перебор Массива
 
 const arr = [1, 3, 4, 5, 67];
 
-for (let i = 0; i < arr.length; i++) { //length это моследний индекс массива плюс один [0, 2 , 3, 10] = 4
-    console.log(arr[i]); //Перебераес массив с помощью цикла For
+for (let i = 0; i < arr.length; i++) { //?length это моследний индекс массива плюс один [0, 2 , 3, 10] = 4
+    console.log(arr[i]); //?Переберает массив с помощью цикла For
 }
 
 const arr1 = [1, 3, 4, 5, 67];
 
 for (let value in arr1) {
     console.log(`ключ ${value} имеет значение ${arr1[value]}`);
-} //Перебор массива с помощью цикла For in
+} //?Перебор массива с помощью цикла For in
 
 const arr2 = [1, 3, 4, 5, 67];
 
 for (let value of arr2) {
     console.log(`значение ${value}`);
-} //Перебор массива с помощью цикла For of
+} //?Перебор массива с помощью цикла For of
 
 
-//Метод массива forEach
+//!Метод массива forEach
 const arr3 = [1, 3, 4, 5, 67];
 
 arr3.forEach(function (item, i, arr3) {
@@ -450,17 +450,112 @@ arr3.forEach(function (item, i, arr3) {
 });
 
 
-//Методы превращения
+//!Методы превращения
 
 let str = 'qwerf, sdffdg, ddfegeg, gfgfgrgdf';
-const products = str.split(', ');//Из строки сформировали массив
-products.sort();//Метод сортирует стороки по алфавиту
-console.log(products.join('; '));//Обратно в сторку
+const products = str.split(', ');//?Из строки сформировали массив
+products.sort();//?Метод сортирует стороки по алфавиту
+console.log(products.join('; '));//?Обратно в сторку
 
 const arr4 = [1, 32, 43, 5, 67];
 arr4.sort(function compareNum(a, b) {
-    return a - b;//Сортирует цифры
+    return a - b;//?Сортирует цифры
 });
 console.log(arr4);
 
+
+//! Способ копирования объеката с помощью функции
+
+function copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+
+    return objCopy;
+}
+
+//? Пример
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        Y: 4
+    }
+};
+
+const newNumbers = copy(numbers);
+
+newNumbers.a = 10;
+
+console.log(newNumbers);
+console.log(numbers);
+
+//!Добафить в объект значения
+
+const add = {
+    d: 17,
+    e: 20
+};
+
+console.log(Object.assign(numbers, add));
+//? метод для добовления в обЪект значений
+//? Первый аргумент Объект второй добавочная часть
+
+//! Копирование обЪекта с помощью метода
+
+const clone = Object.assign({}, add);
+
+clone.d = 20;
+
+console.log(add);
+console.log(clone);
+
+//! Коприрование массива
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'fgdfg';
+console.log(oldArray);
+console.log(newArray);
+
+//! Копирование массива СПРЕД оператором
+
+const video = ['youtube', 'vimeo', 'rutube'],
+    blogs = ['wordpress', 'livejournal', 'blogger'],
+    internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);
+
+//? Пример
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num1 = [2, 5, 7];
+
+log(...num1);
+
+//? Коприруем Массив
+
+const array = ['a', 'b'];
+
+const newArray1 = [...array];
+
+//! Копируем Объект
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const newObj = { ...q };
 
